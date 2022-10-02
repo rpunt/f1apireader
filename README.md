@@ -1,3 +1,5 @@
+[![Go](https://github.com/rpunt/f1apireader/actions/workflows/go.yml/badge.svg?branch=main)](https://github.com/rpunt/f1apireader/actions/workflows/go.yml)
+
 # f1apireader
 
 A Go module to consume the latest race result from the F1 API
