@@ -11,81 +11,81 @@ import (
 )
 
 type Race_Status struct {
-	RaceHubID string
-	Locale string
-	CreatedAt string
-	UpdatedAt string
-	FomRaceID string
+	RaceHubID              string
+	Locale                 string
+	CreatedAt              string
+	UpdatedAt              string
+	FomRaceID              string
 	BrandColourHexadecimal string
-	CircuitSmallImage struct {
+	CircuitSmallImage      struct {
 		Title string
-		Path string
-		Url string
+		Path  string
+		Url   string
 	}
 	Links []struct {
 		Text string
-		Url string
+		Url  string
 	}
 	SeasonContext struct {
-		Id string
-		ContentType string
-		CreatedAt time.Time
-		UpdatedAt time.Time
-		Locale string
-		SeasonYear string
+		Id                      string
+		ContentType             string
+		CreatedAt               time.Time
+		UpdatedAt               time.Time
+		Locale                  string
+		SeasonYear              string
 		CurrentOrNextMeetingKey string
-		State string
-		EventState string
-		LiveEventId string
-		LiveTimingsSource string
-		LiveBlog struct {
-			ContentType string
-			Title string
+		State                   string
+		EventState              string
+		LiveEventId             string
+		LiveTimingsSource       string
+		LiveBlog                struct {
+			ContentType     string
+			Title           string
 			ScribbleEventId string
 		}
-		SeasonState string
-		RaceListingOverride int
+		SeasonState                  string
+		RaceListingOverride          int
 		DriverAndTeamListingOverride int
-		Timetables []struct {
-			State string
-			Session string
-			GmtOffset string
+		Timetables                   []struct {
+			State       string
+			Session     string
+			GmtOffset   string
 			Description string
-			EndTime string //time.Time
-			StartTime string //time.Time
+			EndTime     string //time.Time
+			StartTime   string //time.Time
 		}
-		ReplayBaseUrl string
+		ReplayBaseUrl        string
 		SeasonContextUIState int
 	}
 	RaceResults []struct {
-		DriverTLA string
-		DriverFirstName string
-		DriverLastName string
-		TeamName string
-		PositionNumber string
-		RaceTime string
-		TeamColourCode string
-		GapToLeader string
-		DriverImage string
+		DriverTLA        string
+		DriverFirstName  string
+		DriverLastName   string
+		TeamName         string
+		PositionNumber   string
+		RaceTime         string
+		TeamColourCode   string
+		GapToLeader      string
+		DriverImage      string
 		DriverNameFormat string
 	}
 	Race struct {
-		MeetingCountryName string
-		MeetingStartDate time.Time
+		MeetingCountryName  string
+		MeetingStartDate    time.Time
 		MeetingOfficialName string // "FORMULA 1 PIRELLI GRAN PREMIO D’ITALIA 2022",
-		MeetingEndDate time.Time
+		MeetingEndDate      time.Time
 	}
 	SeasonYearImage string
 	SessionLinkSets struct {
-    ReplayLinks []struct {
-			Session string
-			Text string
-			Url string
+		ReplayLinks []struct {
+			Session  string
+			Text     string
+			Url      string
 			LinkType string
 		}
 	}
 	CurrentRaceStatus string
-	Winner string
+	Winner            string
 }
 
 // Consume the F1 API for the most recent race results
