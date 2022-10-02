@@ -13,7 +13,7 @@ if err != nil {
   fmt.Println("err:", err)
 }
 
-# Write the TLA for the winning driver back to teh Race_Status struct
+# Write the TLA for the winning driver back to the Race_Status struct
 
 for _, event := range race.SeasonContext.Timetables {
   if event.Description == "Race" {
