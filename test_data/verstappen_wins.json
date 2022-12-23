@@ -1,0 +1,219 @@
+{
+  "raceHubId": "6RCoRhk5ls1xyNh3KSTaGP",
+  "locale": "en",
+  "createdAt": "2021-12-15T16:25:05.905Z",
+  "updatedAt": "2022-09-04T15:04:08.962Z",
+  "fomRaceId": "1119",
+  "brandColourHexadecimal": "ee0000",
+  "headline": "Verstappen beats Russell to victory in roller-coaster Dutch Grand Prix",
+  "curatedSection": {
+    "contentType": "assemblySimpleArticleList",
+    "title": "Event Tracker Netherlands 2022 - Curated Articles",
+    "items": [
+      {
+        "id": "7sGMacvx6CE3ki0xVcoYS9",
+        "updatedAt": "2022-09-04T14:48:04.413Z",
+        "realUpdatedAt": "2022-09-04T15:26:14.415Z",
+        "locale": "en",
+        "title": "Verstappen wins dramatic Dutch GP as Russell and Leclerc complete podium after late Safety Car ",
+        "slug": "verstappen-wins-dramatic-dutch-gp-as-russell-and-leclerc-complete-podium",
+        "articleType": "Report",
+        "metaDescription": "Max Verstappen held onto victory in a captivating 2022 Dutch Grand Prix amid a strong showing from the Mercedes and late Safety Car drama at Zandvoort, where George Russell and Charles Leclerc completed the podium.",
+        "thumbnail": {
+          "caption": "ZANDVOORT, NETHERLANDS - SEPTEMBER 04: Race winner Max Verstappen of the Netherlands and Oracle Red Bull Racing celebrates in parc ferme during the F1 Grand Prix of The Netherlands at Circuit Zandvoort on September 04, 2022 in Zandvoort, Netherlands. (Photo by Joe Portlock - Formula 1/Formula 1 via Getty Images)",
+          "image": {
+            "title": "1420751403",
+            "path": "/content/dam/fom-website/sutton/2022/Netherlands/Sunday/1420751403.jpg",
+            "url": "https://www.formula1.com/content/dam/fom-website/sutton/2022/Netherlands/Sunday/1420751403.jpg"
+          }
+        }
+      },
+      {
+        "id": "XYuvTOXuphfRJgxH5iZvb",
+        "updatedAt": "2022-09-04T14:03:42.661Z",
+        "realUpdatedAt": "2022-09-04T14:03:44.878Z",
+        "locale": "en",
+        "title": "WATCH: Enjoy the race start at Zandvoort as Verstappen converts pole into the race lead",
+        "slug": "watch-enjoy-the-race-start-at-zandvoort-as-verstappen-converts-pole-into-the",
+        "articleType": "Video",
+        "metaDescription": "To the delight of the Dutch fans, Max Verstappen aced his start from pole position at Zandvoort, covering the Ferrari of Charles Leclerc to lead into Turn 1.\n\n",
+        "thumbnail": {
+          "caption": "2022 Dutch Grand Prix: Verstappen leads away from pole as Hamilton battles with Sainz on the race start ",
+          "image": {
+            "title": "2022 Dutch Grand Prix: Verstappen leads away from pole as Hamilton battles with Sainz on the race start ",
+            "path": "https://d2n9h2wits23hf.cloudfront.net/image/v1/static/6057949432001/7c4c23d6-5bc4-47c9-b3c8-da45498b239b/685a62d2-0041-4797-87cb-fff6648f3442/640x360/match/image.jpg",
+            "url": "https://d2n9h2wits23hf.cloudfront.net/image/v1/static/6057949432001/7c4c23d6-5bc4-47c9-b3c8-da45498b239b/685a62d2-0041-4797-87cb-fff6648f3442/640x360/match/image.jpg",
+            "renditions": {
+              "2col": "https://d2n9h2wits23hf.cloudfront.net/image/v1/static/6057949432001/7c4c23d6-5bc4-47c9-b3c8-da45498b239b/685a62d2-0041-4797-87cb-fff6648f3442/206x116/match/image.jpg",
+              "2col-retina": "https://d2n9h2wits23hf.cloudfront.net/image/v1/static/6057949432001/7c4c23d6-5bc4-47c9-b3c8-da45498b239b/685a62d2-0041-4797-87cb-fff6648f3442/412x232/match/image.jpg",
+              "3col": "https://d2n9h2wits23hf.cloudfront.net/image/v1/static/6057949432001/7c4c23d6-5bc4-47c9-b3c8-da45498b239b/685a62d2-0041-4797-87cb-fff6648f3442/319x179/match/image.jpg",
+              "3col-retina": "https://d2n9h2wits23hf.cloudfront.net/image/v1/static/6057949432001/7c4c23d6-5bc4-47c9-b3c8-da45498b239b/685a62d2-0041-4797-87cb-fff6648f3442/638x359/match/image.jpg",
+              "4col": "https://d2n9h2wits23hf.cloudfront.net/image/v1/static/6057949432001/7c4c23d6-5bc4-47c9-b3c8-da45498b239b/685a62d2-0041-4797-87cb-fff6648f3442/432x243/match/image.jpg",
+              "4col-retina": "https://d2n9h2wits23hf.cloudfront.net/image/v1/static/6057949432001/7c4c23d6-5bc4-47c9-b3c8-da45498b239b/685a62d2-0041-4797-87cb-fff6648f3442/864x486/match/image.jpg",
+              "6col": "https://d2n9h2wits23hf.cloudfront.net/image/v1/static/6057949432001/7c4c23d6-5bc4-47c9-b3c8-da45498b239b/685a62d2-0041-4797-87cb-fff6648f3442/658x370/match/image.jpg",
+              "6col-retina": "https://d2n9h2wits23hf.cloudfront.net/image/v1/static/6057949432001/7c4c23d6-5bc4-47c9-b3c8-da45498b239b/685a62d2-0041-4797-87cb-fff6648f3442/1316x740/match/image.jpg",
+              "9col": "https://d2n9h2wits23hf.cloudfront.net/image/v1/static/6057949432001/7c4c23d6-5bc4-47c9-b3c8-da45498b239b/685a62d2-0041-4797-87cb-fff6648f3442/997x516/match/image.jpg",
+              "9col-retina": "https://d2n9h2wits23hf.cloudfront.net/image/v1/static/6057949432001/7c4c23d6-5bc4-47c9-b3c8-da45498b239b/685a62d2-0041-4797-87cb-fff6648f3442/1194x672/match/image.jpg"
+            }
+          }
+        },
+        "mediaIcon": "Video"
+      }
+    ]
+  },
+  "circuitSmallImage": {
+    "title": "Netherlands.png",
+    "path": "/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Netherlands.png",
+    "url": "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Netherlands.png"
+  },
+  "links": [
+    {
+      "text": "RESULTS",
+      "url": "https://www.formula1.com/en/results.html/2022/races/1119/netherlands/race-result.html"
+    }
+  ],
+  "seasonContext": {
+    "id": "4kUSabodBuSKy8I2ce68iW",
+    "contentType": "f1SeasonContext",
+    "createdAt": "2018-05-24T08:30:54.749Z",
+    "updatedAt": "2022-09-04T15:04:14.736Z",
+    "locale": "en",
+    "seasonYear": "2022",
+    "currentOrNextMeetingKey": "1119",
+    "state": "POST-RACE",
+    "eventState": "IDLE",
+    "liveEventId": "1132",
+    "liveTimingsSource": "https://livetiming.formula1.com/signalr",
+    "liveBlog": {
+      "contentType": "atomLiveBlogScribbleLive",
+      "title": "Netherlands 2022 Race",
+      "scribbleEventId": "/event/2991018/37480"
+    },
+    "seasonState": "DURING-SEASON",
+    "raceListingOverride": 2022,
+    "driverAndTeamListingOverride": 2022,
+    "timetables": [
+      {
+        "state": "completed",
+        "session": "r",
+        "gmtOffset": "+02:00",
+        "description": "Race",
+        "endTime": "2022-09-04T17:00:00",
+        "startTime": "2022-09-04T15:00:00"
+      },
+      {
+        "state": "completed",
+        "session": "p3",
+        "gmtOffset": "+02:00",
+        "description": "Practice 3",
+        "endTime": "2022-09-03T13:00:00",
+        "startTime": "2022-09-03T12:00:00"
+      },
+      {
+        "state": "completed",
+        "session": "p2",
+        "gmtOffset": "+02:00",
+        "description": "Practice 2",
+        "endTime": "2022-09-02T17:00:00",
+        "startTime": "2022-09-02T16:00:00"
+      },
+      {
+        "state": "completed",
+        "session": "p1",
+        "gmtOffset": "+02:00",
+        "description": "Practice 1",
+        "endTime": "2022-09-02T13:30:00",
+        "startTime": "2022-09-02T12:30:00"
+      },
+      {
+        "state": "completed",
+        "session": "q",
+        "gmtOffset": "+02:00",
+        "description": "Qualifying",
+        "endTime": "2022-09-03T16:00:00",
+        "startTime": "2022-09-03T15:00:00"
+      }
+    ],
+    "replayBaseUrl": "https://livetiming.formula1.com/static/",
+    "seasonContextUIState": 5
+  },
+  "raceResults": [
+    {
+      "driverTLA": "VER",
+      "driverFirstName": "Max",
+      "driverLastName": "Verstappen",
+      "teamName": "Red Bull Racing",
+      "positionNumber": "1",
+      "raceTime": "1:36:42.773",
+      "teamColourCode": "3671C6",
+      "gapToLeader": "0.0",
+      "driverImage": "https://www.formula1.com/content/dam/fom-website/drivers/M/MAXVER01_Max_Verstappen/maxver01.png",
+      "driverNameFormat": "FirstNameIsPrimary"
+    },
+    {
+      "driverTLA": "RUS",
+      "driverFirstName": "George",
+      "driverLastName": "Russell",
+      "teamName": "Mercedes",
+      "positionNumber": "2",
+      "raceTime": "1:36:46.844",
+      "teamColourCode": "6CD3BF",
+      "gapToLeader": "4.071",
+      "driverImage": "https://www.formula1.com/content/dam/fom-website/drivers/G/GEORUS01_George_Russell/georus01.png",
+      "driverNameFormat": "FirstNameIsPrimary"
+    },
+    {
+      "driverTLA": "LEC",
+      "driverFirstName": "Charles",
+      "driverLastName": "Leclerc",
+      "teamName": "Ferrari",
+      "positionNumber": "3",
+      "raceTime": "1:36:53.702",
+      "teamColourCode": "F91536",
+      "gapToLeader": "10.929",
+      "driverImage": "https://www.formula1.com/content/dam/fom-website/drivers/C/CHALEC01_Charles_Leclerc/chalec01.png",
+      "driverNameFormat": "FirstNameIsPrimary"
+    }
+  ],
+  "race": {
+    "meetingCountryName": "Netherlands",
+    "meetingStartDate": "2022-09-02T10:30:00.000Z",
+    "meetingOfficialName": "FORMULA 1 HEINEKEN DUTCH GRAND PRIX 2022",
+    "meetingEndDate": "2022-09-04T15:00:00.000Z"
+  },
+  "seasonYearImage": "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/year%20icon/2022.png",
+  "sessionLinkSets": {
+    "replayLinks": [
+      {
+        "session": "p1",
+        "text": "replay",
+        "url": "https://livetiming.formula1.com/static/2022/2022-09-04_Dutch_Grand_Prix/2022-09-02_Practice_1/",
+        "linkType": "Replay"
+      },
+      {
+        "session": "p2",
+        "text": "replay",
+        "url": "https://livetiming.formula1.com/static/2022/2022-09-04_Dutch_Grand_Prix/2022-09-02_Practice_2/",
+        "linkType": "Replay"
+      },
+      {
+        "session": "p3",
+        "text": "replay",
+        "url": "https://livetiming.formula1.com/static/2022/2022-09-04_Dutch_Grand_Prix/2022-09-03_Practice_3/",
+        "linkType": "Replay"
+      },
+      {
+        "session": "q",
+        "text": "replay",
+        "url": "https://livetiming.formula1.com/static/2022/2022-09-04_Dutch_Grand_Prix/2022-09-03_Qualifying/",
+        "linkType": "Replay"
+      },
+      {
+        "session": "r",
+        "text": "replay",
+        "url": "https://livetiming.formula1.com/static/2022/2022-09-04_Dutch_Grand_Prix/2022-09-04_Race/",
+        "linkType": "Replay"
+      }
+    ]
+  }
+}
