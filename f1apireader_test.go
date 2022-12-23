@@ -35,7 +35,7 @@ func TestResultParsing(t *testing.T) {
 	}
 }
 
-func ReadTestData(filename string) (Race_Status) {
+func ReadTestData(filename string) Race_Status {
 	content, err := os.ReadFile(filename)
 	CheckErr(err)
 
