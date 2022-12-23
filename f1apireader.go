@@ -7,6 +7,7 @@ import (
 	"io"
 	"log"
 	"net/http"
+	"strconv"
 	"time"
 )
 
@@ -84,14 +85,12 @@ type Race_Status struct {
 			LinkType string
 		}
 	}
-	CurrentRaceStatus string
-	Winner            string
 }
 
 // Consume the F1 API for the most recent race results
 func RaceResults(URL string) (*Race_Status, error) {
 	if URL == "" {
-		return nil, errors.New("Empty URL")
+		return nil, errors.New("empty url")
 	}
 
 	client := &http.Client{
@@ -121,4 +120,28 @@ func RaceResults(URL string) (*Race_Status, error) {
 	}
 
 	return &race_status, nil
+}
+
+func (r Race_Status) Status() (string, error) {
+	for _, event := range r.SeasonContext.Timetables {
+		if event.Description == "Race" {
+			return event.State, nil
+		}
+	}
+
+	return "", errors.New("unable to retrieve race timetable: no \"Race\" block")
+}
+
+func (r Race_Status) Winner() (string, error) {
+	var driverTLA string
+	for _, result := range r.RaceResults {
+		position, err := strconv.Atoi(result.PositionNumber)
+		if err != nil {
+			return "", err
+		}
+		if position == 1 {
+			driverTLA = result.DriverTLA
+		}
+	}
+	return driverTLA, nil
 }
