@@ -8,14 +8,14 @@ import (
 )
 
 func TestF1apireader(t *testing.T) {
-	race, err := Race_Results("https://api.formula1.com/v1/event-tracker")
+	race, err := RaceResults("https://api.formula1.com/v1/event-tracker")
 	if err != nil {
 		t.Errorf(`RaceResults("") = %q, %v, want "", error`, race, err)
 	}
 }
 
 func TestF1apireaderEmpty(t *testing.T) {
-	msg, err := Race_Results("")
+	msg, err := RaceResults("")
 	if msg != nil || err == nil {
 		t.Fatalf(`RaceResults("") = %q, %v, want "", error`, msg, err)
 	}
@@ -36,11 +36,11 @@ func TestResultParsing(t *testing.T) {
 	}
 }
 
-func ReadTestData(filename string) Race_Status {
+func ReadTestData(filename string) Event {
 	content, err := os.ReadFile(filename)
 	CheckErr(err)
 
-	race := Race_Status{}
+	race := Event{}
 	jsonErr := json.Unmarshal(content, &race)
 	if jsonErr != nil {
 		log.Fatal(jsonErr)

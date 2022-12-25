@@ -1,6 +1,7 @@
 package f1apireader
 
 import (
+	"context"
 	"encoding/json"
 	"errors"
 	"fmt"
@@ -11,7 +12,7 @@ import (
 	"time"
 )
 
-type Race_Status struct {
+type Event struct {
 	RaceHubID              string            `json:"raceHubId,omitempty"`
 	Locale                 string            `json:"locale,omitempty"`
 	CreatedAt              time.Time         `json:"createdAt,omitempty"`
@@ -21,9 +22,9 @@ type Race_Status struct {
 	Headline               string            `json:"headline,omitempty"`
 	CuratedSection         CuratedSection    `json:"curatedSection,omitempty"`
 	CircuitSmallImage      CircuitSmallImage `json:"circuitSmallImage,omitempty"`
-	Links                  []Links           `json:"links,omitempty"`
+	Links                  []Link            `json:"links,omitempty"`
 	SeasonContext          SeasonContext     `json:"seasonContext,omitempty"`
-	RaceResults            []RaceResults     `json:"raceResults,omitempty"`
+	RaceResults            []RaceResult      `json:"raceResults,omitempty"`
 	Race                   Race              `json:"race,omitempty"`
 	SeasonYearImage        string            `json:"seasonYearImage,omitempty"`
 	SessionLinkSets        SessionLinkSets   `json:"sessionLinkSets,omitempty"`
@@ -59,7 +60,7 @@ type CircuitSmallImage struct {
 	Path  string `json:"path,omitempty"`
 	URL   string `json:"url,omitempty"`
 }
-type Links struct {
+type Link struct {
 	Text string `json:"text,omitempty"`
 	URL  string `json:"url,omitempty"`
 }
@@ -96,7 +97,7 @@ type SeasonContext struct {
 	ReplayBaseURL                string       `json:"replayBaseUrl,omitempty"`
 	SeasonContextUIState         int          `json:"seasonContextUIState,omitempty"`
 }
-type RaceResults struct {
+type RaceResult struct {
 	DriverTLA        string `json:"driverTLA,omitempty"`
 	DriverFirstName  string `json:"driverFirstName,omitempty"`
 	DriverLastName   string `json:"driverLastName,omitempty"`
@@ -125,24 +126,26 @@ type SessionLinkSets struct {
 }
 
 // Consume the F1 API for the most recent race results
-func Race_Results(URL string) (*Race_Status, error) {
-	if URL == "" {
+func RaceResults(url string) (*Event, error) {
+	if url == "" {
 		return nil, errors.New("empty url")
 	}
 
+	requestTimeout := 10
 	client := &http.Client{
-		// CheckRedirect: redirectPolicyFunc,
+		Timeout: time.Second * time.Duration(requestTimeout),
 	}
-	req, err := http.NewRequest("GET", URL, nil)
+	ctx := context.Background()
+	req, err := http.NewRequestWithContext(ctx, http.MethodGet, url, nil)
 	if err != nil {
-		fmt.Printf("reponse error: %s", err)
+		fmt.Printf("response error: %s", err)
 	}
 	req.Header.Add("apiKey", "qPgPPRJyGCIPxFT3el4MF7thXHyJCzAP")
 	req.Header.Add("locale", "en")
 
 	response, err := client.Do(req)
 	if err != nil {
-		fmt.Printf("reponse error: %s", err)
+		log.Panicf("response error: %s", err)
 	}
 	defer response.Body.Close()
 
@@ -150,16 +153,16 @@ func Race_Results(URL string) (*Race_Status, error) {
 
 	// body, err := os.ReadFile("../didhamiltonwin/api_results/20220904-132607.json")
 
-	race_status := Race_Status{}
-	jsonErr := json.Unmarshal(body, &race_status)
+	raceStatus := Event{}
+	jsonErr := json.Unmarshal(body, &raceStatus)
 	if jsonErr != nil {
-		log.Fatal(jsonErr)
+		log.Panic(jsonErr)
 	}
 
-	return &race_status, nil
+	return &raceStatus, nil
 }
 
-func (r Race_Status) Status() (string, error) {
+func (r Event) Status() (string, error) {
 	for _, event := range r.SeasonContext.Timetables {
 		if event.Description == "Race" {
 			return event.State, nil
@@ -169,16 +172,24 @@ func (r Race_Status) Status() (string, error) {
 	return "", errors.New("unable to retrieve race timetable: no \"Race\" block")
 }
 
-func (r Race_Status) Winner() (RaceResults, error) {
-	var winner RaceResults
+func (r Event) Winner() (RaceResult, error) {
+	driver, err := r.DriverByPosition(1)
+	if err != nil {
+		return RaceResult{}, err
+	}
+	return driver, nil
+}
+
+func (r Event) DriverByPosition(desiredPosition int) (RaceResult, error) {
+	var driver RaceResult
 	for _, result := range r.RaceResults {
 		position, err := strconv.Atoi(result.PositionNumber)
 		if err != nil {
-			return winner, err
+			return driver, err
 		}
-		if position == 1 {
-			winner = result
+		if position == desiredPosition {
+			driver = result
 		}
 	}
-	return winner, nil
+	return driver, nil
 }
