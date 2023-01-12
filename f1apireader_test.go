@@ -8,16 +8,9 @@ import (
 )
 
 func TestF1apireader(t *testing.T) {
-	race, err := RaceResults("https://api.formula1.com/v1/event-tracker")
+	race, err := RaceResults()
 	if err != nil {
 		t.Errorf(`RaceResults("") = %q, %v, want "", error`, race, err)
-	}
-}
-
-func TestF1apireaderEmpty(t *testing.T) {
-	msg, err := RaceResults("")
-	if msg != nil || err == nil {
-		t.Fatalf(`RaceResults("") = %q, %v, want "", error`, msg, err)
 	}
 }
 
