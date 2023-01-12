@@ -1,15 +1,13 @@
 package f1apireader
 
 import (
-	"context"
 	"encoding/json"
 	"errors"
-	"fmt"
-	"io"
 	"log"
-	"net/http"
 	"strconv"
 	"time"
+
+	"github.com/rpunt/simplehttp"
 )
 
 type Event struct {
@@ -126,35 +124,20 @@ type SessionLinkSets struct {
 }
 
 // Consume the F1 API for the most recent race results
-func RaceResults(url string) (*Event, error) {
-	if url == "" {
-		return nil, errors.New("empty url")
-	}
+func RaceResults() (*Event, error) {
+	client := simplehttp.New()
+	client.BaseURL = "https://api.formula1.com"
+	client.Headers["apiKey"] = "qPgPPRJyGCIPxFT3el4MF7thXHyJCzAP"
+	client.Headers["locale"] = "en"
 
-	requestTimeout := 10
-	client := &http.Client{
-		Timeout: time.Second * time.Duration(requestTimeout),
-	}
-	ctx := context.Background()
-	req, err := http.NewRequestWithContext(ctx, http.MethodGet, url, nil)
-	if err != nil {
-		fmt.Printf("response error: %s", err)
-	}
-	req.Header.Add("apiKey", "qPgPPRJyGCIPxFT3el4MF7thXHyJCzAP")
-	req.Header.Add("locale", "en")
-
-	response, err := client.Do(req)
+	// response, err := client.Get("/")
+	response, err := client.Get("/v1/event-tracker")
 	if err != nil {
 		log.Panicf("response error: %s", err)
 	}
-	defer response.Body.Close()
-
-	body, _ := io.ReadAll(response.Body)
-
-	// body, err := os.ReadFile("../didhamiltonwin/api_results/20220904-132607.json")
 
 	raceStatus := Event{}
-	jsonErr := json.Unmarshal(body, &raceStatus)
+	jsonErr := json.Unmarshal([]byte(response.Body), &raceStatus)
 	if jsonErr != nil {
 		log.Panic(jsonErr)
 	}
