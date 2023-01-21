@@ -6,7 +6,7 @@ A Go module to consume the latest race result from the F1 API
 
 ## Examples
 
-### Return a `Event` struct for the most recent race
+### Return an `Event` struct for the most recent race
 
 ```go
 # race is an Event object
