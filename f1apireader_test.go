@@ -14,6 +14,16 @@ func TestF1apireader(t *testing.T) {
 	}
 }
 
+func TestDriverByPosition(t *testing.T) {
+	race := ReadTestData("test_data/verstappen_wins.json")
+
+	position := 3
+	want := "LEC"
+	if got, _ := race.DriverByPosition(position); got.DriverTLA != want {
+		t.Errorf(`DriverByPosition(%v) = %q, want "%v"`, position, got.DriverTLA, want)
+	}
+}
+
 func TestResultParsing(t *testing.T) {
 	race := ReadTestData("test_data/verstappen_wins.json")
 	var want string
