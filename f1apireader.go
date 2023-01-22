@@ -170,6 +170,10 @@ func (r Event) DriverByPosition(desiredPosition int) (RaceResult, error) {
 		if err != nil {
 			return driver, err
 		}
+		if desiredPosition < 1 || desiredPosition > 3 {
+			// only positions 1-3 are tracked as RaceResults
+			return driver, errors.New("DriverByPosition(): valid values are 1, 2, 3")
+		}
 		if position == desiredPosition {
 			driver = result
 		}
