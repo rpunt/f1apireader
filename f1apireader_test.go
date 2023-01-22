@@ -22,6 +22,14 @@ func TestDriverByPosition(t *testing.T) {
 	if got, _ := race.DriverByPosition(position); got.DriverTLA != want {
 		t.Errorf(`DriverByPosition(%v) = %q, want "%v"`, position, got.DriverTLA, want)
 	}
+
+	// only driver positions 1-3 are returned in this API endpoint
+	// test bounds checking
+	for position := 0; position < 5; position += 4 {
+		if _, err := race.DriverByPosition(position); err == nil {
+			t.Errorf(`DriverByPosition(%v) == nil, expected bounds-checking error`, position)
+		}
+	}
 }
 
 func TestResultParsing(t *testing.T) {
