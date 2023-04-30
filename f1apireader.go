@@ -3,7 +3,6 @@ package f1apireader
 import (
 	"encoding/json"
 	"errors"
-	"log"
 	"strconv"
 	"time"
 
@@ -130,16 +129,16 @@ func RaceResults() (*Event, error) {
 	client.Headers["apiKey"] = "qPgPPRJyGCIPxFT3el4MF7thXHyJCzAP"
 	client.Headers["locale"] = "en"
 
-	// response, err := client.Get("/")
+	raceStatus := Event{}
+
 	response, err := client.Get("/v1/event-tracker")
 	if err != nil {
-		log.Panicf("response error: %s", err)
+		return &raceStatus, err
 	}
 
-	raceStatus := Event{}
 	jsonErr := json.Unmarshal([]byte(response.Body), &raceStatus)
 	if jsonErr != nil {
-		log.Panic(jsonErr)
+		return &raceStatus, jsonErr
 	}
 
 	return &raceStatus, nil
