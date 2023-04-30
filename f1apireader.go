@@ -124,8 +124,7 @@ type SessionLinkSets struct {
 
 // Consume the F1 API for the most recent race results
 func RaceResults() (*Event, error) {
-	client := simplehttp.New()
-	client.BaseURL = "https://api.formula1.com"
+	client := simplehttp.New("https://api.formula1.com")
 	client.Headers["apiKey"] = "qPgPPRJyGCIPxFT3el4MF7thXHyJCzAP"
 	client.Headers["locale"] = "en"
 
