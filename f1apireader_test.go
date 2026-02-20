@@ -10,7 +10,7 @@ import (
 func TestF1apireader(t *testing.T) {
 	race, err := RaceResults()
 	if err != nil {
-		t.Errorf(`RaceResults("") = %q, %v, want "", error`, race, err)
+		t.Errorf(`RaceResults("") = %v, %v, want "", error`, race, err)
 	}
 }
 
